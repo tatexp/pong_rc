@@ -13,11 +13,18 @@ int init(t_pong *_pong)
 {
 	_pong->screen.h = 600;
 	_pong->screen.w = 900;
-	_pong->player.r = _pong->screen.h < _pong->screen.w ? _pong->screen.h : _pong->screen.w;
-	_pong->player.r /= 100;
-	_pong->player.x = 300;
-	_pong->player.y = 300;
-	_pong->player.speed = 3;
+	_pong->obj_size = _pong->screen.h < _pong->screen.w ? _pong->screen.h : _pong->screen.w;
+	_pong->obj_size /= 100;
+	_pong->ball.x = 300;
+	_pong->ball.y = 300;
+	_pong->ball.speed = 3;
+	_pong->players.h_left_player = _pong->screen.h / 10;
+	_pong->players.h_right_player = _pong->players.h_left_player;
+	_pong->players.y_pos_left_player = (_pong->screen.h - _pong->players.h_left_player) / 2;
+	_pong->players.y_pos_right_player = _pong->players.y_pos_left_player;
+	_pong->players.color_left_player = 0x00FFFF00;
+	_pong->players.color_right_player = 0x0000FFFF;
+
 	if ((void *)0 == (_pong->mlx = mlx_init() ))
 		return (error_message_print("Failed on init mlx"));
 	if ((void *)0 == (_pong->mlx_win = mlx_new_window(_pong->mlx, _pong->screen.w, _pong->screen.h, "Pong by aezzara") ))

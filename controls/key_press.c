@@ -36,6 +36,6 @@ int			key_press(int kc, t_pong *_pong)
 	if (kc == 53)
 		close_win(_pong);
 	if (kc == 126) //up key
-		_pong->player.y -= _pong->player.speed;
+		_pong->ball.y -= _pong->ball.speed;
 	return (0);
 }

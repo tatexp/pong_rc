@@ -8,7 +8,7 @@ void	scene_to_backgroud_color(t_pong *_pong)
 	const int	color = 0;
 	const int	w = _pong->screen.w;
 	const int	h = _pong->screen.h;
-	const int	dist = _pong->player.r;
+	const int	size = _pong->obj_size;
 	int 		x = 0;
 	int 		y;
 
@@ -17,7 +17,7 @@ void	scene_to_backgroud_color(t_pong *_pong)
 		y = 0;
 		while (y < h)
 		{
-			if (x >= dist && x <= w - dist && y >= dist && y <= h - dist)
+			if (x >= size && x <= w - size && y >= size && y <= h - size)
 				my_mlx_pixel_put(&_pong->img, x, y, color);
 			++y;
 		}

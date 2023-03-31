@@ -23,15 +23,25 @@ typedef struct s_colors
 	int b;
 }				t_colors;
 
-typedef struct s_player
+typedef struct s_ball
 {
 	double	x;
 	double	y;
 	double	dir;	//direction
-	int		r;		//radius
+	//int		r;		//radius
 	int		speed;
-}				t_player;
+}				t_ball;
 
+typedef struct s_players
+{
+	double	y_pos_left_player;
+	int		h_left_player;
+	int		color_left_player;
+
+	double	y_pos_right_player;
+	int		h_right_player;
+	int		color_right_player;
+}				t_players;
 
 typedef struct	s_img {
 	void	*img;
@@ -44,12 +54,14 @@ typedef struct	s_img {
 //main structure for all variables
 typedef struct s_pong
 {
-	char		**map;
-	t_screen	screen;
-	t_player	player;
-	void		*mlx;
-	void		*mlx_win;
-	t_img		img;
-}				t_pong;
+	char			**map;
+	t_screen		screen;
+	t_players		players;
+	t_ball			ball;
+	void			*mlx;
+	void			*mlx_win;
+	t_img			img;
+	int				obj_size;
+}					t_pong;
 
 #endif

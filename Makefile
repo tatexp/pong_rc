@@ -17,7 +17,7 @@ ERRORS_SRC = error_message_print.c		#error_usage.c
 
 DRAW_DIR = draw/
 DRAW_SRC = draw_border.c	draw_scene.c		print_circle.c		my_mlx_pixel_put.c\
-	scene_to_backgroud_color.c
+	scene_to_backgroud_color.c		draw_players.c
 
 #LIBFT_DIR = libft/
 #LIBFT_SRC = ft_putchar_fd.c		ft_putstr_fd.c		ft_strchr.c\

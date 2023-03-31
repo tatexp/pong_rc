@@ -3,9 +3,9 @@
 void print_circle(t_pong *_pong)
 {
 	const int	color = 0x00FFFFFF; //while color
-	const int	r = _pong->player.r;
-	const int	px = _pong->player.x; //player's x-position
-	const int	py = _pong->player.y;	//player's y-position
+	const int	r = _pong->obj_size; //radius
+	const int	px = _pong->ball.x; //player's x-position
+	const int	py = _pong->ball.y;	//player's y-position
 	int 		ix = px - r;	//counter for x starts with player's x-position minus raduis
 	int 		iy;
 
@@ -22,5 +22,4 @@ void print_circle(t_pong *_pong)
 		}
 		ix++;
 	}
-	mlx_put_image_to_window(_pong->mlx, _pong->mlx_win, _pong->img.img, 0, 0);
 }
