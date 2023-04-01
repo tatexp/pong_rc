@@ -1,7 +1,11 @@
 #include "draw.h"
+#include <stdio.h>
+
 
 int		draw_scene(t_pong *_pong)
 {
+	fps_calc(_pong);
+	draw_border(_pong); //tmp
 	//erase background
 	scene_to_backgroud_color(_pong);
 	print_circle(_pong);

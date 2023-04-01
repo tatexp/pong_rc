@@ -33,9 +33,23 @@ int			key_press(int kc, t_pong *_pong)
 		key_up_down(v, -1);
 	if ((kc == 126 || kc == 13) && v->key.up == 0)
 		key_up_down(v, 1);*/
-	if (kc == 53)
+	if ( kc == 53 )
 		close_win(_pong);
-	if (kc == 126) //up key
-		_pong->ball.y -= _pong->ball.speed;
+
+	//'W' key => move left player up
+	if ( kc == 13 && !edge_check(_pong, _pong->players.y_pos_left_player - _pong->players.speed) ) 
+		_pong->players.y_pos_left_player -= _pong->players.speed;
+
+	//'S' key => move left player down
+	if (kc == 1 && !edge_check(_pong, _pong->players.y_pos_left_player + _pong->players.h_left_player + _pong->players.speed) ) 
+		_pong->players.y_pos_left_player += _pong->players.speed;
+
+	//up key => move right player up
+	if ( kc == 126 && !edge_check(_pong, _pong->players.y_pos_right_player - _pong->players.speed) ) 
+		_pong->players.y_pos_right_player -= _pong->players.speed;
+
+	//down key => move right player down
+	if (kc == 125 && !edge_check(_pong, _pong->players.y_pos_right_player + _pong->players.h_right_player + _pong->players.speed) ) 
+		_pong->players.y_pos_right_player += _pong->players.speed;
 	return (0);
 }

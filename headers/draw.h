@@ -3,6 +3,7 @@
 
 #include "mlx.h"
 #include "structure.h"
+#include "utils.h"
 
 void	draw_border(t_pong *_pong);
 int		draw_scene(t_pong *_pong);

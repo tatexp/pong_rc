@@ -2,7 +2,7 @@
 
 void	draw_border(t_pong *_pong)
 {
-	const int	color = 0x00FF0000; //red color
+	const int	color = _pong->screen.border_color;
 	const int	w = _pong->screen.w;
 	const int	h = _pong->screen.h;
 	const int	size = _pong->obj_size;

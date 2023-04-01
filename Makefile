@@ -10,7 +10,7 @@ SRC_DIR = ./
 SRC = main.c
 
 CONTROLS_DIR = controls/
-CONTROLS_SRC = key_press.c
+CONTROLS_SRC = key_press.c		edge_check.c 
 
 ERRORS_DIR = errors/
 ERRORS_SRC = error_message_print.c		#error_usage.c
@@ -34,7 +34,7 @@ DRAW_SRC = draw_border.c	draw_scene.c		print_circle.c		my_mlx_pixel_put.c\
 #	cub_atoi.c
 
 UTILS_DIR = utils/
-UTILS_SRC = close_win.c #whitespaces_skip.c	init_variables.c	end_of_line_check.c\
+UTILS_SRC = close_win.c 	fps_calc.c 		get_time.c #whitespaces_skip.c	init_variables.c	end_of_line_check.c\
 #	segment_len.c
 
 #добавить сюда новые подпапки

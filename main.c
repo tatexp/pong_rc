@@ -13,6 +13,7 @@ int init(t_pong *_pong)
 {
 	_pong->screen.h = 600;
 	_pong->screen.w = 900;
+	_pong->screen.border_color = 0x00FF0000; //red color
 	_pong->obj_size = _pong->screen.h < _pong->screen.w ? _pong->screen.h : _pong->screen.w;
 	_pong->obj_size /= 100;
 	_pong->ball.x = 300;
@@ -24,6 +25,8 @@ int init(t_pong *_pong)
 	_pong->players.y_pos_right_player = _pong->players.y_pos_left_player;
 	_pong->players.color_left_player = 0x00FFFF00;
 	_pong->players.color_right_player = 0x0000FFFF;
+	_pong->players.speed = 10;
+	_pong->time = 0;
 
 	if ((void *)0 == (_pong->mlx = mlx_init() ))
 		return (error_message_print("Failed on init mlx"));

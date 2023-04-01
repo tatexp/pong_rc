@@ -13,6 +13,7 @@ typedef struct s_screen
 {
 	int	w;
 	int	h;
+	int	border_color;
 }				t_screen;
 
 typedef struct s_colors
@@ -41,6 +42,8 @@ typedef struct s_players
 	double	y_pos_right_player;
 	int		h_right_player;
 	int		color_right_player;
+
+	int		speed;
 }				t_players;
 
 typedef struct	s_img {
@@ -62,6 +65,8 @@ typedef struct s_pong
 	void			*mlx_win;
 	t_img			img;
 	int				obj_size;
+	int				fps;
+	long			time;
 }					t_pong;
 
 #endif
